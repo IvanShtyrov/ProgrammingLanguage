@@ -43,12 +43,19 @@ print(f"Не равно: {not_equal_result}")
 equal_result = num1 == num2
 print(f"Равно: {equal_result}")
 
-
 #Task3
 
 
 #Task4
-
+# Ввод сопротивлений проводников от пользователя
+resistance1 = float(input("Введите сопротивление первого проводника: "))
+resistance2 = float(input("Введите сопротивление второго проводника: "))
+# Вычисление общего сопротивления в соответствии с формулой для соединения проводников в серии
+total_resistance = resistance1 + resistance2 
+# Округление результата до 1 знака после запятой 
+total_resistance = round(total_resistance,1)
+# Вывод результата
+print(f"Общее сопротивление цепи: {total_resistance} Ом")
 
 #Task5
 
