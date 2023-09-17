@@ -1,1 +1,40 @@
+# Исходный список песен
+violator_songs = [
+    ['World in My Eyes', 4.86],
+    ['Sweetest Perfection', 4.43],
+    ['Personal Jesus', 4.56],
+    ['Halo', 4.9],
+    ['Waiting for the Night', 6.07],
+    ['Enjoy the Silence', 4.20],
+    ['Policy of Truth', 4.76],
+    ['Blue Dress', 4.29],
+    ['Clean', 5.83]
+]
 
+# Запрос количества песен у пользователя
+n = int(input("Введите количество песен из списка: "))
+
+# Создаем пустой список для выбранных песен
+selected_songs = []
+
+# Запрашиваем названия выбранных песен и добавляем их в список
+for i in range(n):
+    song_name = input(f"Введите название {i + 1}-й песни: ")
+    selected_songs.append(song_name)
+
+# Инициализируем переменную для общей продолжительности
+total_duration = 0
+
+# Ищем продолжительность выбранных песен и добавляем их к общей продолжительности
+for song in selected_songs:
+    found = False
+    for track in violator_songs:
+        if song == track[0]:
+            total_duration += track[1]  # Продолжительность в минутах
+            found = True
+            break
+    if not found:
+        print(f"Песня '{song}' не найдена в списке.")
+
+# Выводим общую продолжительность
+print(f"Общая продолжительность выбранных песен: {total_duration:.2f} минут")
