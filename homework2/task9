@@ -1,1 +1,24 @@
+# Вводим количество друзей (N) и количество долговых расписок (K)
+N = int(input("Кол-во друзей: "))
+K = int(input("Долговых расписок: "))
 
+# Создаем словарь для хранения баланса каждого друга
+# Ключ - номер друга, Значение - баланс
+balances = {}
+
+# Вводим долговые расписки и обновляем балансы
+for _ in range(K):
+    # Вводим данные о расписке
+    to_friend = int(input("Кому: "))
+    from_friend = int(input("От кого: "))
+    amount = int(input("Сколько: "))
+
+    # Обновляем балансы для обоих друзей
+    # Уменьшаем баланс у должника и увеличиваем у кредитора
+    balances[to_friend] = balances.get(to_friend, 0) - amount
+    balances[from_friend] = balances.get(from_friend, 0) + amount
+
+# Выводим баланс каждого друга
+print("Баланс друзей:")
+for friend, balance in balances.items():
+    print(f"{friend}: {balance}")
