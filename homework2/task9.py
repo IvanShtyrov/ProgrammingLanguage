@@ -15,7 +15,7 @@ for _ in range(K):
 
     # Обновляем балансы для обоих друзей
     # Уменьшаем баланс у должника и увеличиваем у кредитора
-    balances[to_friend] = balances.get(to_friend, 0) - amount
+    balances[to_friend] = balances.get(to_friend, 0) - amount  # здесь можно было просто инкрементировать balances[to_friend] -= amount
     balances[from_friend] = balances.get(from_friend, 0) + amount
 
 # Выводим баланс каждого друга
